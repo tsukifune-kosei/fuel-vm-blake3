@@ -1,6 +1,6 @@
 expected_root:
   encoding: hex
-  value: dd97174c80e5e5aa3a31c61b05e279c1495c8a07b2a08bca5dbc9fb9774f9457
+  value: 78c39d94849a8c79f9a0cab42325cdf52203e5de7face97b50c4bf126cac8959
 name: Test Update Overwrite Key
 steps:
 - action: update

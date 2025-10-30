@@ -48,8 +48,8 @@ impl Contract {
     /// The `ContractId` of the contract with empty bytecode, zero salt, and empty state
     /// root.
     pub const EMPTY_CONTRACT_ID: ContractId = ContractId::new([
-        55, 187, 13, 108, 165, 51, 58, 230, 74, 109, 215, 229, 33, 69, 82, 120, 81, 4,
-        85, 54, 172, 30, 84, 115, 226, 164, 0, 99, 103, 189, 154, 243,
+        229, 249, 182, 84, 214, 168, 132, 93, 73, 232, 214, 55, 126, 30, 9, 100, 78, 243,
+        36, 199, 47, 178, 249, 73, 34, 2, 71, 251, 165, 119, 115, 137,
     ]);
 
     /// Number of bytes in the contract's bytecode

@@ -1,6 +1,6 @@
 expected_root:
   encoding: hex
-  value: 82bf747d455a55e2f7044a03536fc43f1f55d43b855e72c0110c986707a23e4d
+  value: a014e9c06bb26c39103ec7ae41acb4f4bb7fbb611d9a29582df5e59cb87f7cbb
 name: Test Update 100
 steps:
 - action: update

@@ -1,6 +1,6 @@
 expected_root:
   encoding: hex
-  value: e912e97abc67707b2e6027338292943b53d01a7fbd7b244674128c7e468dd696
+  value: 620182ef47ce657739ae8f6424266e23a7a39933c8f2f9c20be58d17503b2e5d
 name: Test Delete Sparse Union
 steps:
 - action: update

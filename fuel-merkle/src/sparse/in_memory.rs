@@ -243,7 +243,7 @@ mod test {
 
         let root = tree.root();
         let expected_root =
-            "39f36a7cb4dfb1b46f03d044265df6a491dffc1034121bc1071a34ddce9bb14b";
+            "2d160499ae72cf3ecefc4a281d1fae5cb0cf413f302d553a99ec387b80d6b696";
         assert_eq!(hex::encode(root), expected_root);
     }
 
@@ -256,7 +256,7 @@ mod test {
 
         let root = tree.root();
         let expected_root =
-            "8d0ae412ca9ca0afcb3217af8bcd5a673e798bd6fd1dfacad17711e883f494cb";
+            "eea54dae5684cddac293bbb15ef31f52dcf0dd5d2b12e63ff66f11cfc01f6a77";
         assert_eq!(hex::encode(root), expected_root);
     }
 
@@ -270,7 +270,7 @@ mod test {
 
         let root = tree.root();
         let expected_root =
-            "52295e42d8de2505fdc0cc825ff9fead419cbcf540d8b30c7c4b9c9b94c268b7";
+            "f205a9a0107a8ebcc439bfe622527cdf0833c43ca5e436c1da85ccdbc7860c80";
         assert_eq!(hex::encode(root), expected_root);
     }
 
@@ -297,7 +297,7 @@ mod test {
 
         let root = tree.root();
         let expected_root =
-            "39f36a7cb4dfb1b46f03d044265df6a491dffc1034121bc1071a34ddce9bb14b";
+            "2d160499ae72cf3ecefc4a281d1fae5cb0cf413f302d553a99ec387b80d6b696";
         assert_eq!(hex::encode(root), expected_root);
     }
 }

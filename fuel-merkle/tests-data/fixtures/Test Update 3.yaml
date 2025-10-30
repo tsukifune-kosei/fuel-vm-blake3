@@ -1,6 +1,6 @@
 expected_root:
   encoding: hex
-  value: 52295e42d8de2505fdc0cc825ff9fead419cbcf540d8b30c7c4b9c9b94c268b7
+  value: 0a0c763d0b0d0cdd41281f2f2ebb165ef8e12d91273dc6ff487877ed7fb0ea7f
 name: Test Update 3
 steps:
 - action: update

@@ -8,19 +8,14 @@ use fuel_merkle_test_helpers::data::{
     binary::ProofTest,
 };
 
-use digest::Digest;
 use function_name::named;
 use rand::seq::IteratorRandom;
 use rand_pcg::Pcg64;
 use rand_seeder::Seeder;
-use sha2::Sha256;
-
-type Hash = Sha256;
 
 pub fn sum(data: &[u8]) -> Bytes32 {
-    let mut hash = Hash::new();
-    hash.update(data);
-    hash.finalize().into()
+    let hash = blake3::hash(data);
+    (*hash.as_bytes()).into()
 }
 
 fn generate_test(

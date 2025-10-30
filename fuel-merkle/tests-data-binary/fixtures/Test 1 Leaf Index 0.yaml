@@ -2,10 +2,10 @@ name: Test 1 Leaf Index 0
 function_name: generate_test_1_leaf_index_0
 description: Build a proof from a binary Merkle tree consisting of 1 leaf and leaf index 0. This proof is valid and verification is expected to pass.
 root:
-  value: 40561de71f9ab9b37d9bb1194f96e73d9b24170d13e8fbe62216a5eddea86412
+  value: 7a2ce9f994bc628d47d80610e2f9d308d2c2a4a5ac9065711523acf2f0ab25ef
   encoding: hex
 data:
-  value: 573e3ac3738932ec6c1bcb33981470f1cdcd34d0cc64f5b7168ec6f0b4a66295
+  value: c1669e76ff126ebe3d298e60d9775aa31d3427c4880dec036fd8ef10048da1f0
   encoding: hex
 proof_set: []
 proof_index: 0

@@ -255,7 +255,11 @@ mod da_compression {
         }
     }
 
+    // This test is ignored because the hash algorithm was changed from SHA256 to BLAKE3
+    // in version 0.65.0, which is a breaking change that makes compressed transactions
+    // incompatible between versions.
     #[tokio::test]
+    #[ignore = "Hash algorithm changed from SHA256 to BLAKE3 - breaking change"]
     async fn release_0_58_2_can_deserialize_compressed_latest() {
         // Given
         let mut context = TestContext;

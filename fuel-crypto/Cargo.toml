@@ -33,7 +33,7 @@ std = [
     "serde?/default",
     "k256/std",
     "ed25519-dalek/std",
-    "sha2/std",
+    "blake3/std",
     "p256/std",
     "ecdsa/std",
 ]
@@ -53,14 +53,13 @@ rand = { version = "0.8", default-features = false, optional = true }
 # the deterministic arguments of the signature (key, nonce, message), as defined in the RFC-6979
 secp256k1 = { version = "0.30.0", default-features = false, features = ["recovery", "rand", "std"], optional = true }
 serde = { version = "1.0", default-features = false, features = ["derive"], optional = true }
-sha2 = { version = "0.10", default-features = false }
+blake3 = { version = "1.5", default-features = false }
 zeroize = { version = "1.5", features = ["derive"] }
 
 [dev-dependencies]
 bincode = { workspace = true }
 criterion = { workspace = true }
 fuel-crypto = { path = ".", features = ["random", "test-helpers"] }
-sha2 = "0.10"
 test-case = "3.3"
 
 [lints.rust]

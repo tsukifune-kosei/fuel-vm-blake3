@@ -1,15 +1,11 @@
 use fuel_types::Bytes32;
-use sha2::{
-    Digest,
-    Sha256,
-    digest::Update,
-};
+use blake3;
 
 use core::iter;
 
 /// Standard hasher
 #[derive(Debug, Default, Clone)]
-pub struct Hasher(Sha256);
+pub struct Hasher(blake3::Hasher);
 
 impl Hasher {
     /// Length of the output
@@ -20,15 +16,16 @@ impl Hasher {
     where
         B: AsRef<[u8]>,
     {
-        sha2::Digest::update(&mut self.0, data)
+        self.0.update(data.as_ref());
     }
 
     /// Consume, append data and return the hasher
-    pub fn chain<B>(self, data: B) -> Self
+    pub fn chain<B>(mut self, data: B) -> Self
     where
         B: AsRef<[u8]>,
     {
-        Self(self.0.chain(data))
+        self.0.update(data.as_ref());
+        self
     }
 
     /// Consume, append the items of the iterator and return the hasher
@@ -44,7 +41,7 @@ impl Hasher {
 
     /// Reset the hasher to the default state
     pub fn reset(&mut self) {
-        self.0.reset();
+        self.0 = blake3::Hasher::new();
     }
 
     /// Hash the provided data, returning its digest
@@ -52,21 +49,20 @@ impl Hasher {
     where
         B: AsRef<[u8]>,
     {
-        let mut hasher = Sha256::new();
-
-        sha2::Digest::update(&mut hasher, data);
-
-        <[u8; Bytes32::LEN]>::from(hasher.finalize()).into()
+        let hash = blake3::hash(data.as_ref());
+        (*hash.as_bytes()).into()
     }
 
     /// Consume the hasher, returning the digest
     pub fn finalize(self) -> Bytes32 {
-        <[u8; Bytes32::LEN]>::from(self.0.finalize()).into()
+        let hash = self.0.finalize();
+        (*hash.as_bytes()).into()
     }
 
     /// Return the digest without consuming the hasher
     pub fn digest(&self) -> Bytes32 {
-        <[u8; Bytes32::LEN]>::from(self.0.clone().finalize()).into()
+        let hash = self.0.clone().finalize();
+        (*hash.as_bytes()).into()
     }
 }
 

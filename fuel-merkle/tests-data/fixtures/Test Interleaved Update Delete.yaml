@@ -1,6 +1,6 @@
 expected_root:
   encoding: hex
-  value: 7e6643325042cfe0fc76626c043b97062af51c7e9fc56665f12b479034bce326
+  value: 1b854d508ca6b4fd722934b165a165f2a79c28cb13bb9ac0f517cbe8932f330d
 name: Test Interleaved Update Delete
 steps:
 - action: update

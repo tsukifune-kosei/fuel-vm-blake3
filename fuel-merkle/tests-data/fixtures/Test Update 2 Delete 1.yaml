@@ -1,6 +1,6 @@
 expected_root:
   encoding: hex
-  value: 39f36a7cb4dfb1b46f03d044265df6a491dffc1034121bc1071a34ddce9bb14b
+  value: 2bca6aaca8802e8bf5cd3c942d67a251b69e60add9a2058e8457f45968ccd7bb
 name: Test Update 2 Delete 1
 steps:
 - action: update

@@ -342,6 +342,7 @@ fn secp256k1_recover__register_c_overflows() {
 
 #[test]
 fn secp256r1_recover() {
+    use fuel_crypto::secp256r1;
     use p256::ecdsa::SigningKey;
 
     let rng = &mut StdRng::seed_from_u64(2322u64);
@@ -356,14 +357,14 @@ fn secp256r1_recover() {
     let message = Message::new(message);
 
     let secret_key = SigningKey::random(rng);
-    let (signature, _recovery_id) =
-        secret_key.sign_prehash_recoverable(&*message).unwrap();
+    let signature = secp256r1::sign_prehashed(&secret_key, &message)
+        .expect("Signing failed");
     let public_key = secret_key.verifying_key();
 
     #[rustfmt::skip]
     let script = vec![
         op::gtf_args(0x20, 0x00, GTFArgs::ScriptData),
-        op::addi(0x21, 0x20, signature.to_bytes().len() as Immediate12),
+        op::addi(0x21, 0x20, signature.len() as Immediate12),
         op::addi(0x22, 0x21, message.as_ref().len() as Immediate12),
         op::movi(0x10, 64),
         op::aloc(0x10),
@@ -375,7 +376,6 @@ fn secp256r1_recover() {
     ].into_iter().collect();
 
     let script_data = signature
-        .to_bytes()
         .iter()
         .copied()
         .chain(message.as_ref().iter().copied())

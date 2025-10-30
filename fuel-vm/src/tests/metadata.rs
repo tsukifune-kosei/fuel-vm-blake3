@@ -1441,7 +1441,7 @@ fn get__create_specific_transaction_fields__success() {
 
     let instructions_contract_id = alloc_bytearray::<32>(
         0x11,
-        hex::decode("54dcc5dbe7dc3ff267b6a9147c358a38f8b7ac61160769458fdcf53f751be37f")
+        hex::decode("fa9e862d6c15df8a4692107f6b938c8da879eb9165498229ea48f6758bae2dcf")
             .unwrap()
             .try_into()
             .unwrap(),

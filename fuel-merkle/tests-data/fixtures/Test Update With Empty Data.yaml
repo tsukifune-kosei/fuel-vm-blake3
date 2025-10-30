@@ -1,6 +1,6 @@
 expected_root:
   encoding: hex
-  value: "3529664b414de6285270f7ebda7a43e20ae0ff6191c07d876b86282eb8ce93ce"
+  value: "4bfd55555e7c76bcf4184f89e5477f85eb2ddd9935cc05465446f2bc875f3dd0"
 name: Test Update With Empty Data
 steps:
 - action: update

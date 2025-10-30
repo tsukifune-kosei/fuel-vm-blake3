@@ -5,10 +5,6 @@ use rand::{
     seq::IteratorRandom,
     thread_rng,
 };
-use sha2::{
-    Digest,
-    Sha256,
-};
 
 use crate::{
     binary::{
@@ -40,9 +36,8 @@ const SAMPLE_SIZES: &[usize] = &[
 ];
 
 fn sum(data: &[u8]) -> Bytes32 {
-    let mut hash = Sha256::new();
-    hash.update(data);
-    hash.finalize().into()
+    let hash = blake3::hash(data);
+    (*hash.as_bytes()).into()
 }
 
 #[test]
